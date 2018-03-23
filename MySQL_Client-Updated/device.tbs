@@ -1,0 +1,26 @@
+include "global.tbh"
+
+'====================================================================
+sub callback_stg_error(byref stg_name_or_num as string,index as byte,status as en_stg_status_codes)
+'Callback procedure, informs of the error during the execution of stg_get() or set_set().
+'Procedure body has to be created elsewhere in the project (externally with respect to the library).
+end sub
+
+sub callback_stg_pre_get(byref stg_name_or_num as string,index as byte,byref stg_value as string)
+'Callback procedure, informs that the setting member's value is being read through one of the STG library's procedures;
+'allows to update the setting member's value before it is returned by the STG library.
+'Procedure body has to be created elsewhere in the project (externally with respect to the library).
+end sub
+sub callback_stg_post_set(byref stg_name_or_num as string, index as byte,byref stg_value as string)
+'Callback procedure, informs that the setting member's value is being written to through one of the STG library's procedures;
+'allows to respond to the value change.
+'Procedure body has to be created elsewhere in the project (externally with respect to the library).
+end sub
+function callback_stg_vm_read(address as word) as byte
+'Callback procedure, required only when STG_RAM_TYPE=1, used to read one byte from a "custom" volatile memory.
+'Procedure body has to be created elsewhere in the project (externally with respect to the library).
+end function
+sub callback_stg_vm_write(data_to_write as byte, address as word)
+'Callback procedure, required only when STG_RAM_TYPE=1, used to write one byte to a "custom" volatile memory.
+'Procedure body has to be created elsewhere in the project (externally with respect to the library).
+end sub
