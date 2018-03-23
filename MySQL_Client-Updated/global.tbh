@@ -1,4 +1,0 @@
-include "mysql_client+.tbh"
-includepp "settings.xtxt"
-include "settings\trunk\settings.tbh"
-include "device.tbh"

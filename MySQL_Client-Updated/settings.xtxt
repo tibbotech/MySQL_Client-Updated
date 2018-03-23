@@ -1,6 +1,0 @@
->>BDT	E	W	1	0	65535	A	30	time ansver from mysql
-#define STG_DESCRIPTOR_FILE "settings.xtxt"
-#define STG_MAX_NUM_SETTINGS 1
-#define STG_RAM_ARRAY_SIZE 0
-#define STG_MAX_SETTING_NAME_LEN 3
-#define STG_MAX_SETTING_VALUE_LEN 5
