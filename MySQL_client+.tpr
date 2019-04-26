@@ -5,7 +5,7 @@ src_lib_ver=2_00_03
 name=MySQL_client+
 output=MySQL_client+.tpc
 debug=on
-defines= /dLCD_TYPE=SOLOMON_SSD1963 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_NET=NET_ENABLED /dOBJECT_KP=KP_ENABLED /dOBJECT_WLN=WLN_ENABLED
+defines= /dLCD_TYPE=SOLOMON_SSD1963 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_NET=NET_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_KP=KP_ENABLED /dOBJECT_WLN=WLN_ENABLED
 transport=udp_winpcap
 [address1]
 platform=TPP2W
@@ -18,7 +18,7 @@ address=0.36.119.81.78.203
 [address3]
 platform=TPP2W(G2)
 transport=udp_winpcap
-address=0.36.119.82.228.6
+address=0.36.119.82.177.95
 [file1]
 path=main.tbs
 type=basic

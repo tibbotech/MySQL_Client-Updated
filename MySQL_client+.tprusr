@@ -1,9 +1,9 @@
 [project]
-watch=s, mysql_p.packet_r
+watch=s, mysql_p.packet_r, sock.statesimple
 [file1]
 line=0
-cursor=100
-opened=yes
+cursor=316
+opened=active
 breakpoints=
 [file2]
 line=0
@@ -11,9 +11,9 @@ cursor=114
 opened=yes
 breakpoints=
 [file3]
-line=0
-cursor=50
-opened=active
+line=18
+cursor=964
+opened=yes
 breakpoints=
 [file4]
 line=0

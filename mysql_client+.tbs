@@ -36,12 +36,12 @@ public sub sql_init()
 'procedures or functions).
 
 '-------The block of your data---------
-	mysql.sql_sock = 0					'Number of socket for MySql client
-	mysql.ip_address = "10.1.1.10"				'ip address of Server MySql
+	mysql.sql_sock = 1					'Number of socket for MySql client
+	mysql.ip_address = "192.168.1.40"				'ip address of Server MySql
 	mysql.tcpip_port = 3306					'TCP/IP port of Server MySql
-	mysql.username = "user1"				'database Autorization login
-	mysql.password = "1234"				'database Password
-	mysql.db_name = "parcking"				'database Name
+	mysql.username = "root"				'database Autorization login
+	mysql.password = "password"				'database Password
+	mysql.db_name = "test"				'database Name
 '-------The block of your data---------
 	
 	'Socket for MySql
@@ -98,9 +98,10 @@ public function sql_connect(lg as string(20), pw as string(20), db as string(20)
 		mysql_p.packet_r = sock.getdata(255)
 		sock.rxclear
 		
-		'-----Make data for authorization
-		position=instr(5,mysql_p.packet_r,chr(0),1)+5
-		seed = mid(mysql_p.packet_r,position,8)+right(mysql_p.packet_r,13)
+		'-----Make data for authorization	
+		position=instr(5,mysql_p.packet_r,chr(0),1)
+		seed = mid(mysql_p.packet_r,position+5,8)+mid(mysql_p.packet_r,position+32,12)
+		
 		'We need a seed for calculating the hash from password
 		mysql_p.num_pack=val(mid(mysql_p.packet_r,4,1))
 		mysql_p.num_pack=mysql_p.num_pack+1

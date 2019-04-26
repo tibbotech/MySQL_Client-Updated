@@ -4,7 +4,7 @@ sub on_sys_init()
 	dim s as string
 	stg_start()
 	
-	net.ip = "192.168.1.4"
+	net.ip = "192.168.1.200"
 	net.gatewayip = "192.168.1.1"
 	net.netmask = "255.255.255.0"
 	
@@ -14,12 +14,16 @@ sub on_sys_init()
 	if sql_connect("","","") = false then
 		'If error was detected
 		s = "Can't connect to MySQL Server"
+		sys.debugprint(s)
 	else
 		'The connection was established. 
+		sys.debugprint("Connected" + "\r\n")
 		s = sql_query("SELECT NOW()")
 		'Ok. Now "S" contains current data/time or "ERROR". Check it.
 		if s <> ERROR_PACKET_REPLY then
 			s = "Today is: " + s
+			sys.debugprint(s)
+			
 		end if
 	end if
 end sub
